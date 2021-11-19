@@ -1,30 +1,19 @@
-var box;
+var canvas, backgroundImage;
 
-function setup() {
-  createCanvas(400,400);
-  box = createSprite(200,200,50,50);
-  box.shapeColor = "brown";
+var questions;
+
+var question, contestant, quiz;
+
+
+function setup(){
+  canvas = createCanvas(850,400);
+  database = firebase.database();
+  quiz = new Quiz();
+  quiz.start();
 }
 
-function draw() 
-{
-  background("green");
 
-  if(keyIsDown(UP_ARROW)) {
-    box.position.y = box.position.y -7;
-  }
+function draw(){
+  background("pink");
 
-  if(keyIsDown(DOWN_ARROW)) {
-    box.position.y = box.position.y +7;
-  }
-
-  if(keyIsDown(RIGHT_ARROW)) {
-    box.position.x = box.position.x +7;
-  }
-
-  if(keyIsDown(LEFT_ARROW)) {
-    box.position.x = box.position.x -7;
-  }
-
-  drawSprites();
 }
